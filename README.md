@@ -1,17 +1,24 @@
-# Hacker News Story Tagging & Clustering
+# 🔍 Text Classification & Semantic Article Recommendation
 
-This script builds a TF-IDF tagging and clustering model using Hacker News data.
+This project provides a simple and interactive web interface (via Streamlit) to:
+- Classify input text using a fine-tuned BERT model.
+- Recommend top-3 semantically similar articles based on the predicted label using Sentence-BERT embeddings.
 
-## Features
+## 🧠 Features
 
-- Merges story titles, content, and all related comments.
-- Extracts top keywords using TF-IDF.
-- Clusters stories using KMeans.
+- 🤖 **Text Classification** using a fine-tuned `bert-base-uncased` model.
+- 📚 **Semantic Recommendations** using `all-MiniLM-L6-v2` SentenceTransformer.
+- 🎯 Filter by predicted class to recommend relevant articles.
+- 🔗 Displays article **title**, **URL**, **semantic score**, and a brief **summary**.
+- 🌐 Built with **Streamlit** multi-page UI for ease of use.
 
-## Setup Instructions
+## 📂 Project Structure
 
-1. Make sure you are using Python 3 (not Python 2.7).
-2. Create and activate a virtual environment:
+- `labeled data.csv`: Your original labeled dataset with columns like `content`, `predict`, `title`, `url`.
+- `bert_model/`: Folder containing your fine-tuned classification model(too big can not upload to github).
+- `app.py`: Main Streamlit app file.
+- `embedding_generator.py`: Script to generate and save content embeddings.
+- `labeled_data_with_embeddings.csv`: Final dataset with precomputed Sentence-BERT vectors.
 
 ```bash
 python3 -m venv hn_env
