@@ -1,1 +1,8 @@
-pandas\nscikit-learn
+streamlit
+transformers
+torch
+pandas
+scikit-learn
+sentence-transformers
+numpy
+
